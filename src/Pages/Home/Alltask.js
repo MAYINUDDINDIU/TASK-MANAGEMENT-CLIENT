@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Alltask = () => {
     const [tasks, setTasks] = useState([]);
@@ -37,19 +38,29 @@ const Alltask = () => {
         <div className=''>
             <div className='mt-4 py-5'>
                 <h3 className='text-2xl text-green-600 font-bold text-center'>Total Task: {tasks.length}</h3>
+                <button className='mt-2 btn btn-primary px-12 rounded'> <Link to='/Add-Task'>ADD NEW TASK</Link> </button>
                 <div>
                     {
                         tasks.map((task) => <div key={task._id} task={task} class="overflow-x-auto lg:w-3/4 mx-auto">
                             <div className='justify-center flex mt-5'>
-                                <div class="card lg:w-full bg-success rounded shadow-2xl mt-2">
-                                    <div class="card-body bg-success ">
+                                <div class="card lg:w-full bg-success rounded shadow-2xl mt-1">
+                                    <div class="card-body  justify-center flex">
                                         <table className="table ">
                                             <tbody>
                                                 <tr className=''>
+                                                    <td>
+                                                        <div class="form-control">
+                                                            <label class="label cursor-pointer">
+
+                                                                <input type="checkbox" class="checkbox checkbox-primary" />
+                                                            </label>
+                                                        </div>
+                                                    </td>
+
                                                     <td className=''>
                                                         <input type="text" name='description' placeholder="Type Your Task" value={task.description} class="input  input-bordered rounded input-success w-full max-w-md" required />
-                                                        <button class="btn btn-primary px-16 lg:px-10 ml-2 rounded m-2">EDIT</button>
-                                                        <button onClick={() => handleDelete(task._id)} class="btn btn-primary px-16 lg:px-10 ml-2 rounded m-2">DELETE</button>
+                                                        <button class="btn btn-info text-white px-16 lg:px-10 ml-2 rounded m-2"> <Link to={`/Update/${task._id}`}>EDIT</Link></button>
+                                                        <button onClick={() => handleDelete(task._id)} class="btn btn-error text-white px-16 lg:px-10 ml-2 rounded m-2">DELETE</button>
                                                     </td>
 
 
@@ -68,6 +79,7 @@ const Alltask = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 

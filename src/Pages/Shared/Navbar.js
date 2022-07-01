@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -27,8 +28,9 @@ const Navbar = () => {
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0 text-white ">
-                    <li className='bg-[#00227b] rounded px-6 mr-2'><a>TO-DO</a></li>
-                    <li className='bg-[#00227b] rounded px-6 mr-2'><a>CALENDER</a></li>
+                    <li className='bg-[#00227b] rounded px-6 mr-2'><Link to='/'>TASK</Link></li>
+                    <li className='bg-[#00227b] rounded px-6 mr-2'><Link to='/Add-Task'>TO-DO</Link></li>
+                    <li className='bg-[#00227b] rounded px-6 mr-2'><Link to='/calendar'>CALENDER</Link></li>
                     <li className='bg-[#00227b] rounded px-6 '><a>COMPLETED TASKS</a></li>
                 </ul>
             </div>

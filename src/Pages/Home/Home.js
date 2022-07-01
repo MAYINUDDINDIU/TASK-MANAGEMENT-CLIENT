@@ -12,7 +12,7 @@ const Home = () => {
 
         <div>
             <Taskadd></Taskadd>
-            <Alltask></Alltask>
+            {/* <Alltask></Alltask> */}
         </div>
     );
 };
