@@ -13,7 +13,7 @@ const Taskadd = () => {
 
         const add = { description }
 
-        fetch('http://localhost:5000/task', {
+        fetch('https://hudson-beaver-69286.herokuapp.com/task', {
 
             method: "POST",
             headers: {

@@ -10,7 +10,7 @@ const UpdateTask = () => {
     console.log(task);
 
     useEffect(() => {
-        const url = `http://localhost:5000/task-all/${id}`;
+        const url = `https://hudson-beaver-69286.herokuapp.com/task-all/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setTask(data))
@@ -21,7 +21,7 @@ const UpdateTask = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = (data, event) => {
         console.log(data);
-        const url = `http://localhost:5000/task-all/${id}`;
+        const url = `https://hudson-beaver-69286.herokuapp.com/task-all/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
